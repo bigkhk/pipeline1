@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<button id="reqBtn">모든 데이터 검색</button>
+	<script>
+		
+		document.querySelector("#reqBtn").addEventListener("click", function(){
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function(resData) {   //응답 완료시 실행되는 영역
+				document.querySelector("#dataView").innerHTML = this.responseText;
+			}
+			xhttp.open("GET", "deptall");  //모든 검색 
+			xhttp.send();
+			
+		});
+		
+		
+	</script>
+	
+	
+	<button class="reqBtn2">모든 데이터 검색 1</button>
+	<button class="reqBtn2">모든 데이터 검색 2</button>
+	
+	<script>
+		
+		document.querySelector("#reqBtn").addEventListener("click", function(){
+			//alert(1);
+			document.querySelectorAll(".reqBtn2")[1].innerHTML = "혁준";
+		});
+		
+	</script>
+	
+	
+	
+	<br><hr><br>
+	<div id="dataView"></div>
+	
+	
+	
+</body>
+</html>

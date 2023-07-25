@@ -1,0 +1,27 @@
+server:
+  port: 80
+  servlet:
+    context-path: /guestbook
+    
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: rootroot
+    # docker compose 등 url
+    url: jdbc:mysql://database-1.chcx6dl6rhmc.ap-northeast-2.rds.amazonaws.com:3306/fisa?characterEncoding=UTF-8 
+    username: admin
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+    show-sql: true 
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+      
+      
+      
+      
